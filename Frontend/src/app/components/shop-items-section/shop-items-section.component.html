@@ -1,4 +1,10 @@
 <h1 id="tanks">Танки (Backend)</h1>
+<put-request-form *ngIf="showPUTform && selectedTank" [model]="selectedTank" (putRequest)="putRequest($event)"></put-request-form>
+<post-form-request *ngIf="showPOSTform && !showPUTform"  (postRequest)="postRequest($event)"></post-form-request>
 <div class="images">
-    <app-shop-item-template *ngIf="tank" [tank]="tank"></app-shop-item-template>
+    <app-shop-item-template  *ngFor="let item of Tanks" [tank]='item' (deleteClicked)="deleteRequest($event)" (selectClicked)="onSelect($event)"></app-shop-item-template>
 </div>
+<p>В проекті є джисон файл з валідними даними</p>
+<section>
+    
+</section>

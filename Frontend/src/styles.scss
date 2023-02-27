@@ -1,3 +1,38 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$dp2023-frontend-primary: mat.define-palette(mat.$indigo-palette);
+$dp2023-frontend-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$dp2023-frontend-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$dp2023-frontend-theme: mat.define-light-theme((
+  color: (
+    primary: $dp2023-frontend-primary,
+    accent: $dp2023-frontend-accent,
+    warn: $dp2023-frontend-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($dp2023-frontend-theme);
+
 * {
   padding: 0;
   margin: 0;
@@ -10,11 +45,17 @@ header {
   height: 50px;
 }
 
-body {
-  background-image: url(https://cdn.pixabay.com/photo/2016/01/22/18/59/background-1156435_960_720.png);
-  background-size: cover;
+body{
+  background-image: url(https://cdn.pixabay.com/photo/2014/05/24/00/07/woven-cloth-352481_960_720.jpg);
+  filter:contrast(100%);
+  background-size:cover;
+  background-clip: content-box;
 }
-
+#tanks{
+  font-size: 36px;
+  text-align: center;
+  margin: 30px 0;
+}
 h1 {
   font-size: 48px;
   text-align: center;
@@ -69,7 +110,10 @@ span {
 .block__menu {
   width: 100%;
   text-align: center;
-  height: 500px;
+  height: auto;
+  *{
+    margin: 2.5rem 0;
+  }
 }
 
 .title_tanks {
@@ -79,6 +123,7 @@ span {
   width: 100%;
   text-align: center;
   font-size: 36px;
+  padding: 15px 0;
 }
 
 .short {
@@ -102,7 +147,9 @@ span {
   // height: 500px;
   // padding-top: 40px;
   display: grid;
-  grid-template-columns: max-content;
+  grid-auto-columns:1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
 
   gap: 1.5rem;
   margin-top: 2rem;
@@ -146,7 +193,6 @@ span {
     span {
       padding: 0 1rem;
       color: orange;
-      font-weight: 500;
     }
   }
 }
@@ -284,3 +330,5 @@ footer {
   color: white;
   line-height: 1.5;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

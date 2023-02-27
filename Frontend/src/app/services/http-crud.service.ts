@@ -11,7 +11,16 @@ export class HttpCrudService implements HttpCrudInterface{
   private apiurl:string = "http://localhost:8080/dp2023/tanks";
 
   constructor(private http:HttpClient) { }
-  getdata(): Observable<ITanks> {
-    return this.http.get<ITanks>(this.apiurl);
+  doPut(body: ITanks): Observable<ITanks> {
+    return this.http.put<ITanks>(this.apiurl + "/" + body.id, body)
+  }
+  doGet(): Observable<ITanks[]> {
+    return this.http.get<ITanks[]>(this.apiurl);
+  }
+  doDel(body:ITanks):Observable<ITanks[]>{
+    return this.http.delete<ITanks[]>(this.apiurl + "/" + body.id)
+  }
+  doPost(body:ITanks):Observable<ITanks>{
+    return this.http.post<ITanks>(this.apiurl, body)
   }
 }

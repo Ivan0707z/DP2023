@@ -1,11 +1,15 @@
 package Entities;
 
-public class Tanks {
+import java.io.Serializable;
+
+public class Tanks implements Serializable {
+    private int id;
     private String name;
     private int power;
     private int power_reserve;
     private int speed;
     private String photo;
+    public Tanks(){}
 
     public Tanks(String name, int power, int power_reserve, int speed, String photo) {
         this.name = name;
@@ -14,7 +18,13 @@ public class Tanks {
         this.speed = speed;
         this.photo = photo;
     }
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getName() {
         return name;
     }
