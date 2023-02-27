@@ -1,0 +1,41 @@
+{
+    "tanks":[
+        {
+            "id": 1,
+            "name": "Леклерк",
+            "power": 1500,
+            "speed": 71,
+            "image": "",
+            "power_reserve":550
+        },
+        {
+            "id": 2,
+            "name": "Леопард 2",
+            "power": 1500,
+            "speed": 68,
+            "image": "",
+            "power_reserve":550
+        },{
+            "id": 3,
+            "name": "БМ «Оплот»",
+            "power": 1200,
+            "speed": 70,
+            "image": "",
+            "power_reserve":400
+        },{
+            "id": 4,
+            "name": "Челленджер 2",
+            "power":1200,
+            "speed":56,
+            "image": "",
+            "power_reserve":400
+        },{
+            "id": 5,
+            "name": "Т-34-85",
+            "power": 500,
+            "speed": 55,
+            "image": "",
+            "power_reserve":350
+        }
+    ]
+}
