@@ -1,6 +1,8 @@
 package Entities;
 
-public class Tanks {
+import java.io.Serializable;
+
+public class Tanks implements Serializable {
     private String name;
     private int power;
     private int power_reserve;

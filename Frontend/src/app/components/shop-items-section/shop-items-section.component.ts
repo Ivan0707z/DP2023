@@ -9,11 +9,17 @@ import { HttpCrudService } from 'src/app/services/http-crud.service';
 export class ShopItemsSectionComponent implements OnInit {
 
   constructor(private service:HttpCrudService) { }
+  // tank:ITanks = { "name": "Леклерк", "power": 1500, "power_reserve": 550, "speed": 71, "photo": "./assets/img/2.jpg" };
   tank!:ITanks;
   ngOnInit(): void {
     this.update();
   }
   update(){
-    this.service.getdata().subscribe((tank) => {this.tank = tank})
+    this.service.doGet().subscribe((tank) => {this.tank = tank})
+  }
+  putRequest(body:ITanks){
+  
+    this.service.doPut(body).subscribe(()=>{alert("PUT request has been sent!"); this.update();})
+    
   }
 }
