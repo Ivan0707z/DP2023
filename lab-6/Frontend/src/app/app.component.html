@@ -1,0 +1,14 @@
+<app-header></app-header>
+<app-main></app-main>
+<app-shop
+  (editDevice)="Edit($event)"
+  (addToCard)="addToCart($event)"
+></app-shop>
+<app-add-form></app-add-form>
+<app-edit-form [editDevice]="editItem"></app-edit-form>
+<app-cart
+  [CartDevices]="cartList"
+  [total_price]="total_price"
+  (update_total_price)="updatePrice($event)"
+></app-cart>
+<app-footer></app-footer>
