@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;900&display=swap"
+            rel="stylesheet"
+    />
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Device Hub</title>
+
+    <style>
+        body{
+            overflow-x: hidden;
+            font-family: "Inter", sans-serif;
+        }
+        .main{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .title{
+            margin-left: 10px;
+        }
+        h4{
+            font-size: 15px;
+        }
+        p{
+            font-size: 13px;
+        }
+        .item{
+            height: 340px;
+            width: 220px;
+            text-align: center;
+            margin-top: 30px;
+            margin-left: 10px;
+            margin-right: 10px;
+            border: 1px solid #381811;
+        }
+        .image{
+            height: 120px;
+            width: auto;
+        }
+        .row{
+            margin: 10px 10px 10px 10px;
+        }
+        .type{
+            width: 150px;
+        }
+        .inp{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .form{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10vw;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="title">Device Hub</h2>
+    <div class="shop">
+        <div class="main">
+            <div class="item" th:each="device : ${deviceList}">
+                <img
+                        class="image"
+                        th:src="@{${device.image}}"
+                />
+                <h4 th:text="|${device.name}|"></h4>
+                <p th:text="|${device.description}|"></p>
+                <h4 th:text="|${device.amount}|"></h4>
+                <h4 th:text="|${device.type}|"></h4>
+                <p th:text="|${device.price} $|"></p>
+            </div>
+        </div>
+
+        <div class="form">
+            <form action="#" th:action="@{/add-device}" th:object="${device}" method="post">
+                <h2 class="title">Add Form</h2>
+                <div class="row">
+                    <div class="inp">
+                        <input type="text" field="*{name}" id="name" placeholder="Name" name="name" class="type">
+                        <input type="text" field="*{image}" id="Image" placeholder="Image" name="image" class="type">
+                    </div>
+                    <div class="inp">
+                        <input type="text" field="*{description}" id="description" placeholder="Description" name="description" class="type">
+                        <input type="text" field="*{price}" id="price" placeholder="Price" name="price" class="type">
+                    </div>
+                    <div class="inp">
+                        <input type="text" field="*{type}" id="type" placeholder="Type" name="type" class="type">
+                        <input type="text" field="*{amount}" id="amount" placeholder="Amount" name="amount" class="type">
+                    </div>
+                </div>
+                <div class="row">
+                    <div >
+                        <input type="submit" value="Додати девайс" class="main_button" src="/">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</body>
+</html>
