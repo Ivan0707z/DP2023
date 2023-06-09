@@ -1,0 +1,134 @@
+@import '../../../styles.scss';
+
+.form-group {
+  padding-top: 75px;
+  .form-field {
+    color: #fff;
+    width: 100%;
+    padding: 5px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  .PIB-section{
+    @include size(size-laptop) {width: 1250px;}
+    @include size(size-3) {width: 1400px;}
+    @include size(size-2) {width: 1500px;}
+    @include size(size-1) {width: 1600px;}
+  }
+
+  .form-array-group {
+    .form-array-header {
+      border-radius: 5px;
+
+      &:hover {
+        background-color: rgba(241, 241, 241, 0.5);
+      }
+
+      .title {
+
+      }
+
+      .description {
+        color: #6c757d;
+        font-size: 0.9rem;
+      }
+
+      .add-button {
+        margin-left: auto;
+      }
+    }
+
+    .form-array-values {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+    }
+  }
+
+  .padded {
+    padding: 0.5rem;
+  }
+
+  .padded-y {
+    padding: 1rem 0 ;
+  }
+
+  .flex-align-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .margin-left {
+    margin-left: 0.5rem;
+  }
+
+  .margin-left-lg {
+    margin-left: 1rem;
+  }
+}
+
+.time-icon{
+  padding-left: 200px;
+}
+
+.Date{
+  @include size(size-laptop) {width: 1250px;}
+  @include size(size-3) {width: 1400px;}
+  @include size(size-2) {width: 1500px;}
+  @include size(size-1) {width: 1600px;}
+}
+.Time{
+  @include size(size-laptop) {width: 600px;}
+  @include size(size-3) {width: 675px;}
+  @include size(size-2) {width: 725px;}
+  @include size(size-1) {width: 775px;}
+}
+
+.btn_block{
+  @include size(size-laptop) {padding-left: 34.5%;}
+  @include size(size-3) {padding-left: 37%;}
+  @include size(size-2) {padding-left: 37%;}
+  @include size(size-1) {padding-left: 37%;}
+}
+
+.btn{
+  width: 160px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.btn:hover {
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn.btn-block {
+  background-image: linear-gradient(
+    to right,
+    #07663d,
+    #236d55,
+    #1d7c4e,
+    #1a7147
+  );
+  box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+}
