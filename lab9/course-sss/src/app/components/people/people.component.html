@@ -1,0 +1,10 @@
+<div class="people-item__background">
+  <div
+    [ngStyle]="{ background: 'url(' + people.photo + ') top/cover' }"
+    class="content"
+  ></div>
+  <img src="{{ people.photo }}" alt="notfound" />
+</div>
+<div class="description">
+  <p>{{ people.name }}</p>
+</div>

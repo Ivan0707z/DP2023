@@ -1,0 +1,25 @@
+@import '../../../styles.scss';
+
+.header{
+  position: fixed;
+  background-color: rgb(17, 36, 19);
+  width: 100%;
+  height: 65px;
+  gap: 20px;
+  padding-right: 35%;
+  padding-top: 35px;    
+  z-index: 1500; 
+  @include size(size-laptop) {padding-left: 35%;}
+  @include size(size-3) {padding-left: 36%;}
+  @include size(size-2) {padding-left: 38%;}
+  @include size(size-1) {padding-left: 38%;}
+  a{
+      text-decoration: none;
+      color: rgb(240, 255, 142);
+      padding-left: 20px;
+      font-size: 22px;
+  }
+  a:hover{
+      color: rgb(164, 173, 101);
+  }
+}

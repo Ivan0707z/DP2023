@@ -1,0 +1,58 @@
+@import '../../../styles.scss';
+
+.full-width-table {
+  @include size(size-laptop) {width: 1250px;}
+  @include size(size-3) {width: 1400px;}
+  @include size(size-2) {width: 1500px;}
+  @include size(size-1) {width: 1600px;}
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+  background-color: rgba(75, 115, 86, 0.2);
+  color: #fff;
+}
+tr {
+  &:hover {
+      background-color: rgba(47, 186, 98, 0.3);
+  }
+}
+td {
+  position: relative;
+  &:hover {
+      &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: -9999px;
+          bottom: -9999px;
+          background-color: rgba(255,255,255,0.2);
+          z-index: -1;
+      }
+  }
+}
+.field-section{
+  @include size(size-laptop) {width: 1250px;}
+  @include size(size-3) {width: 1400px;}
+  @include size(size-2) {width: 1500px;}
+  @include size(size-1) {width: 1600px;}
+  color: #fff;
+}
+.checkbox{
+  padding-left: 20px;
+}
+.del{
+  margin-left: 20px;
+}

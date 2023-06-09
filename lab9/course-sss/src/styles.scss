@@ -1,0 +1,27 @@
+$header_color: #363636;
+$font_white: #fff;
+$transparent_color: rgba(28,28,28,0);
+$btn_color: #2a333b;
+$bg_color: #0b1d26;
+$orange_color: #d5b23f;
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+@mixin size($size) {
+    @if $size == smallest   {
+        @media (max-width: 498px) { @content; }
+    }@else if $size == size-laptop  {
+        @media (min-width: 1520px) { @content; }
+    } @else if $size == size-3  {
+        @media (min-width: 1600px) { @content; }
+    }  @else if $size == size-2 {
+        @media (min-width: 1700px) { @content; }
+    } @else if $size == size-1  {
+        @media (min-width: 1800px) { @content; }
+    }
+}
+html{
+    overflow-x: hidden;
+}
+

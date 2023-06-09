@@ -1,0 +1,18 @@
+<div class="filler-block"></div>
+
+<div class="soldiers">
+    <div class="spisok">
+        <app-people *ngFor="let people of peoples | paginate: 
+        { 
+        itemsPerPage: pageSize,
+        currentPage: page,
+        totalItems: pagelistLength 
+        }" [people]='people' class="pepole-main"></app-people>
+    </div>
+    <div class="paginator">
+        <select (change)="handlePageSizeChange($event)" class="selector__count">
+            <option *ngFor="let size of pageSizes" [ngValue]="pageSize">{{size}}</option>
+        </select>
+        <pagination-controls class="technic__pagination" *ngIf="peoples " previousLabel="" nextLabel="" [responsive]="true" (pageChange)="handlePageChange($event)"></pagination-controls>
+    </div>
+</div>
